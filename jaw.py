@@ -1,9 +1,9 @@
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
-def news():
+def news(st):
     # the target we want to open
-    url = 'https://summerofcode.withgoogle.com/archive/2019/projects/'
+    url=st
 
     # open with GET method
     resp = requests.get(url)
@@ -57,4 +57,3 @@ def news():
                 c=c+1            
         df=pd.DataFrame({'name':name,'program':pro,'organization':org})
         df.to_csv('file1.csv')
-news()
